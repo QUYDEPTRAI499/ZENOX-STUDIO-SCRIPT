@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771073866816,
+    "game": "Blox Fruit",
+    "title": "kaitun",
+    "desc": "",
+    "code": "Config = {\nTeam = \"Pirates\",\nConfiguration = {\nHopWhenIdle = true,\nAutoHop = true,\nAutoHopDelay = 60 * 60,\nFpsBoost = true,\nBlackScreen = false\n},\nItems = {\n-- Melees\nAutoFullyMelees = true,\n-- Swords\nSaber = true,\nCursedDualKatana = true,\n-- Guns\nSoulGuitar = true,\n-- Upgrades\nRaceV2 = true\n},\nSettings = {\nStayInSea2UntilHaveDarkFragments = true\n}\n}\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/hhl29042008-ops/script/refs/heads/main/cac\"))()",
+    "tag": "",
+    "tagClass": "hot"
+  },
+  {
     "id": 1771072477026,
     "game": "Blox Fruit",
     "title": "Shadow Hub Kaitun (Get Key)",
