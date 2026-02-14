@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771072354884,
+    "game": "Blox Fruit",
+    "title": "Shadow Hub Main (Get Key)",
+    "desc": "Auto Fram, Auto Farm [KAITUN]",
+    "code": "\nscript_key = \"\"\ngetgenv().Team = \"Marines\"\ngetgenv().Hide_Menu = false\ngetgenv().Auto_Execute = false\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/main.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771071712425,
     "game": "Blox Fruit",
     "title": "Auto Bouty 3TOC",
