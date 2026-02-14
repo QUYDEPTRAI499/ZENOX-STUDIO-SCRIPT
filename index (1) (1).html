@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NULLIX SCRIPT HUB - Galaxy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --bg: #050505; --card: rgba(13,13,25,0.92); --text: #f0f0ff;
+            --primary: #5865f2; --accent: #00d4ff; --glow: 0 0 40px rgba(0,212,255,0.6);
+        }
+        [data-theme="light"] {
+            --bg: #f0f4ff; --card: #ffffff; --text: #1a1a3d;
+            --primary: #4c55d9; --accent: #0099cc; --glow: 0 0 30px rgba(0,153,204,0.4);
+        }
+        body { background:var(--bg); color:var(--text); margin:0; font-family:'Inter',sans-serif; overflow-x:hidden; transition: background 0.3s, color 0.3s; }
+        canvas#galaxy { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none; }
+
+        .header { text-align:center; padding:90px 20px 40px; position:relative; }
+        .header h1 { font-size:3.8rem; background:linear-gradient(90deg,#00ff9d,var(--accent)); -webkit-background-clip:text; color:transparent; margin: 0; }
+        .header p { color: #888; margin-top: 10px; font-size: 1.1rem; }
+
+        .controls { display:flex; justify-content:center; gap:20px; padding:20px; flex-wrap:wrap; }
+        .search-input { padding:14px 25px; width:360px; border-radius:50px; border:1px solid var(--accent); background:rgba(255,255,255,0.05); color:var(--text); font-size: 1rem; outline: none; transition: 0.3s; }
+        .search-input:focus { box-shadow: 0 0 15px var(--accent); background:rgba(255,255,255,0.1); }
+        .theme-toggle { padding:12px 20px; background:rgba(255,255,255,0.1); border-radius:50px; cursor:pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .theme-toggle:hover { background:rgba(255,255,255,0.2); }
+
+        .tabs { display:flex; gap:12px; justify-content:center; padding:10px 20px; flex-wrap:wrap; }
+        .tab-btn { padding:10px 24px; border:none; background:rgba(255,255,255,0.05); color:var(--text); border-radius:50px; cursor:pointer; font-weight: 600; transition: 0.3s; border: 1px solid transparent; }
+        .tab-btn:hover { background:rgba(255,255,255,0.15); }
+        .tab-btn.active { background:var(--primary); color:white; box-shadow:var(--glow); border-color: var(--accent); }
+
+        /* --- MỚI: Style cho bộ lọc phụ (Sub-tabs) --- */
+        .sub-tabs { display:flex; gap:10px; justify-content:center; padding:5px 20px 30px; flex-wrap:wrap; }
+        .sub-btn { 
+            padding: 6px 16px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            background: rgba(0,0,0,0.3); 
+            color: #888; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 0.9rem; 
+            transition: 0.3s; 
+        }
+        .sub-btn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+        .sub-btn.active { 
+            background: var(--accent); 
+            color: #000; 
+            font-weight: bold; 
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(0,212,255,0.3);
+        }
+
+        .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:25px; padding:0 20px 40px; max-width:1400px; margin:auto; }
+        
+        /* Cập nhật script-card để các ô cao bằng nhau */
+        .script-card {
+            background:var(--card); border-radius:20px; padding:25px; transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+            border:1px solid rgba(255,255,255,0.1); box-shadow:0 10px 30px rgba(0,0,0,0.4);
+            display: flex; flex-direction: column; height: 100%; /* Giúp card cao bằng nhau */
+            box-sizing: border-box;
+        }
+        .script-card:hover {
+            transform:translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,212,255,0.2);
+            border-color:var(--accent);
+        }
+        .script-card h3 { 
+            color:var(--accent); margin:10px 0; font-size: 1.3rem; 
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; /* Cắt chữ nếu tên quá dài */
+        }
+        .card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; margin-bottom: 15px; }
+        .tag { padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.75rem; }
+        .tag.hot { background: #ff4757; color: white; }
+        .tag.new { background: #2ed573; color: white; }
+        .tag.vip { background: #ffa502; color: black; }
+        
+        .get-btn { width:100%; padding:14px; background:var(--primary); color:white; border:none; border-radius:12px; font-weight:700; cursor:pointer; margin-top:auto; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .get-btn:hover { background: var(--accent); color: #000; box-shadow: 0 0 20px var(--accent); }
+
+        .toast { position:fixed; bottom:30px; right:30px; background:#00c896; color:white; padding:16px 24px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5); display:none; z-index:9999; animation: slideIn 0.3s ease-out; }
+        @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+        .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10000; align-items:center; justify-content:center; backdrop-filter: blur(5px); }
+        .modal-content { background:var(--card); width:90%; max-width:700px; border-radius:20px; padding:30px; border: 1px solid var(--accent); box-shadow: 0 0 50px rgba(0,212,255,0.2); position: relative; }
+        .close { position: absolute; top: 20px; right: 25px; font-size:2rem; cursor:pointer; color: #888; transition: 0.3s; }
+        .close:hover { color: var(--accent); }
+        .copy-btn { background:var(--accent); color:#000; padding:14px 40px; border:none; border-radius:12px; font-weight:700; cursor:pointer; margin-top: 20px; width: 100%; transition: 0.3s; font-size: 1.1rem; }
+        .copy-btn:hover { transform: scale(1.02); box-shadow: 0 0 20px var(--accent); }
+
+        .support { margin:80px auto; max-width:700px; text-align:center; padding:50px 30px; background:var(--card); border-radius:20px; border:1px solid rgba(255,255,255,0.1); }
+
+        @media(max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .search-input { width: 100%; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <canvas id="galaxy"></canvas>
+    <div class="toast" id="toast"><i class="fas fa-check-circle"></i> Đã copy script thành công!</div>
+
+    <div class="header">
+        <h1>NULLIX SCRIPT HUB</h1>
+        <p>Galaxy Theme • Script Theo Game • Cập nhật liên tục</p>
+    </div>
+
+    <div class="controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="Tìm tên game hoặc script...">
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+    </div>
+
+    <div class="tabs" id="tabs"></div>
+    
+    <div class="sub-tabs" id="subTabs"></div>
+
+    <div class="grid" id="grid">
+        <p style="text-align:center; grid-column:1/-1; color:#888;">Đang kết nối đến server script...</p>
+    </div>
+
+    <div class="support">
+        <h2><i class="fas fa-headset"></i> Cần hỗ trợ script?</h2>
+        <p style="color:#aaa; margin-bottom: 25px;">Script bị lỗi hoặc cần tìm script mới? Tham gia ngay Discord của Nullix!</p>
+        <a href="https://discord.gg/59XF8hMW5R" target="_blank" style="background:#5865f2;color:white;padding:16px 40px;border-radius:50px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:12px; transition: 0.3s; box-shadow: 0 5px 15px rgba(88,101,242,0.4);">
+            <i class="fab fa-discord"></i> Tham gia Discord Server
+        </a>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2 id="modal-title" style="margin-top:0; color:var(--accent);">Script Title</h2>
+            <div style="position:relative;">
+                <pre id="modal-code" style="background:#111; color: #0f0; padding:20px; border-radius:12px; max-height:300px; overflow:auto; font-family: monospace; border: 1px solid #333;"></pre>
+            </div>
+            <button class="copy-btn" onclick="copyCode()">
+                <i class="fas fa-copy"></i> Copy Script
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. CẤU HÌNH KẾT NỐI ADMIN ---
+        const DATA_URL = 'https://raw.githubusercontent.com/HypatiaDz/bnmhuy/main/data.json';
+        
+        let scriptsData = [];
+
+        // --- 2. CÁC BIẾN TOÀN CỤC ---
+        const grid = document.getElementById('grid');
+        const tabsContainer = document.getElementById('tabs');
+        const subTabsContainer = document.getElementById('subTabs'); // Mới thêm
+        const searchInput = document.getElementById('searchInput');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalCode = document.getElementById('modal-code');
+        const toast = document.getElementById('toast');
+        
+        let currentFilter = 'All'; // Game hiện tại
+        let currentCategory = 'All'; // Chức năng hiện tại (MỚI)
+
+        // --- CẤU HÌNH DANH MỤC LỌC PHỤ (Bạn có thể sửa từ khóa tại đây) ---
+        const CATEGORIES = [
+            { name: 'Tất cả', keyword: 'All' },
+            { name: 'Kaitun / Auto', keyword: 'kaitun' },
+            { name: 'PVP / Bounty', keyword: 'pvp' },
+            { name: 'Farm Level', keyword: 'farm' },
+            { name: 'Chest / Items', keyword: 'chest' },
+            { name: 'Hub Tổng', keyword: 'hub' }
+        ];
+
+        // --- 3. KHỞI TẠO ---
+        async function init() {
+            try {
+                const response = await fetch(DATA_URL + '?t=' + Date.now());
+                if (!response.ok) throw new Error("Lỗi kết nối GitHub");
+                
+                scriptsData = await response.json();
+                
+                renderTabs();
+                renderSubTabs(); // Vẽ bộ lọc phụ
+                renderScripts(scriptsData);
+            } catch (error) {
+                console.error(error);
+                grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:50px; color:#ff4757;">
+                    <i class="fas fa-exclamation-triangle" style="font-size:3rem; margin-bottom:15px;"></i><br>
+                    Chưa có dữ liệu hoặc lỗi kết nối!
+                </div>`;
+            }
+
+            initGalaxy();
+            animateStars();
+        }
+
+        // --- 4. CÁC HÀM XỬ LÝ GIAO DIỆN ---
+        function renderTabs() {
+            const games = ['All', ...new Set(scriptsData.map(item => item.game))];
+            
+            tabsContainer.innerHTML = games.map(game => `
+                <button class="tab-btn ${game === 'All' ? 'active' : ''}" 
+                        onclick="filterByGame('${game}')">
+                    ${game === 'All' ? '<i class="fas fa-globe"></i> Tất cả Game' : game}
+                </button>
+            `).join('');
+        }
+
+        // --- MỚI: HÀM VẼ SUB-TABS ---
+        function renderSubTabs() {
+            subTabsContainer.innerHTML = CATEGORIES.map(cat => `
+                <button class="sub-btn ${cat.keyword === 'All' ? 'active' : ''}" 
+                        onclick="filterByCategory('${cat.keyword}', this)">
+                    ${cat.name}
+                </button>
+            `).join('');
+        }
+
+        function renderScripts(data) {
+            grid.innerHTML = "";
+            if(data.length === 0) {
+                grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:50px; color:#666;">
+                    <i class="fas fa-search" style="font-size:3rem; margin-bottom:15px;"></i><br>
+                    Không tìm thấy script nào phù hợp.
+                </div>`;
+                return;
+            }
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'script-card';
+                // Kiểm tra item.tag có tồn tại không, nếu không thì ẩn
+                const tagHTML = item.tag ? `<span class="tag ${item.tagClass || 'hot'}">${item.tag}</span>` : '';
+                
+                card.innerHTML = `
+                    <div class="card-meta">
+                        <span style="color:var(--text);"><i class="fas fa-gamepad"></i> ${item.game}</span>
+                        ${tagHTML}
+                    </div>
+                    <h3 title="${item.title}">${item.title}</h3>
+                    <p style="color:#aaa; font-size:0.95rem; margin-bottom:20px; flex-grow:1; line-height:1.5;">${item.desc}</p>
+                    <div style="border-top:1px solid rgba(255,255,255,0.05); margin-bottom:15px;"></div>
+                    <button class="get-btn" onclick="openModal(${item.id})">
+                        <i class="fas fa-code"></i> LẤY SCRIPT
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // --- 5. LOGIC LỌC VÀ TÌM KIẾM ---
+        window.filterByGame = function(game) {
+            currentFilter = game;
+            
+            // Khi đổi Game, reset bộ lọc phụ về 'Tất cả' để tránh lỗi không thấy bài
+            currentCategory = 'All';
+            renderSubTabs(); 
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if(btn.textContent.includes(game) || (game === 'All' && btn.textContent.includes('Tất cả'))) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            filterData();
+        }
+
+        // --- MỚI: LOGIC LỌC THEO CATEGORY ---
+        window.filterByCategory = function(category, btnElement) {
+            currentCategory = category;
+
+            // Đổi màu nút active
+            document.querySelectorAll('.sub-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            filterData();
+        }
+
+        searchInput.addEventListener('input', () => filterData());
+
+        function filterData() {
+            const keyword = searchInput.value.toLowerCase();
+            
+            const filtered = scriptsData.filter(item => {
+                // 1. Lọc theo Game
+                const matchGame = currentFilter === 'All' || item.game === currentFilter;
+                
+                // 2. Lọc theo Tìm kiếm (Input)
+                const matchSearch = item.title.toLowerCase().includes(keyword) || 
+                                    item.game.toLowerCase().includes(keyword) ||
+                                    item.desc.toLowerCase().includes(keyword);
+
+                // 3. Lọc theo Category (Tự động quét nội dung)
+                let matchCategory = true;
+                if (currentCategory !== 'All') {
+                    const content = (item.title + " " + item.desc).toLowerCase();
+                    matchCategory = content.includes(currentCategory);
+                }
+
+                return matchGame && matchSearch && matchCategory;
+            });
+            renderScripts(filtered);
+        }
+
+        // --- 6. LOGIC MODAL & COPY ---
+        window.openModal = function(id) {
+            const script = scriptsData.find(s => s.id === id);
+            if(script) {
+                modalTitle.innerText = script.title;
+                modalCode.innerText = script.code;
+                modal.style.display = 'flex';
+            }
+        }
+
+        window.closeModal = function() {
+            modal.style.display = 'none';
+        }
+
+        window.copyCode = function() {
+            const code = modalCode.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                toast.style.display = 'block';
+                closeModal();
+                setTimeout(() => toast.style.display = 'none', 3000);
+            }).catch(() => alert('Không thể copy!'));
+        }
+
+        window.onclick = function(e) {
+            if(e.target == modal) closeModal();
+        }
+
+        // --- 7. HIỆU ỨNG GALAXY ---
+        const canvas = document.getElementById('galaxy');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function initGalaxy() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            stars = [];
+            for (let i = 0; i < 150; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2,
+                    speed: Math.random() * 0.5 + 0.1
+                });
+            }
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const isDark = document.body.getAttribute('data-theme') === 'dark';
+            ctx.fillStyle = isDark ? 'rgba(255,255,255,0.8)' : '#333';
+            
+            stars.forEach(s => {
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                ctx.fill();
+                s.y -= s.speed;
+                if(s.y < 0) s.y = canvas.height;
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        window.addEventListener('resize', initGalaxy);
+
+        // --- 8. THEME TOGGLE ---
+        window.toggleTheme = function() {
+            const isDark = document.body.getAttribute('data-theme') === 'dark';
+            document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            document.getElementById('theme-icon').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        init();
+    </script>
+</body>
+</html>
