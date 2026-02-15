@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771137727765,
+    "game": "Blox fruit",
+    "title": "Teddy Hop Boss",
+    "desc": "Auto Farm",
+    "code": "repeat task.wait() until game:IsLoaded() and game:GetService(\"Players\") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild(\"PlayerGui\")\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM\"))() ",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771137674941,
     "game": "Blox fruit",
     "title": "Teddy Hub Auto V4",
