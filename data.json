@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771136892550,
+    "game": "Blox fruit",
+    "title": "Doraemon Hub Main",
+    "desc": "Auto Farm [KAITUN]",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua\"))(",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771136798176,
     "game": "Blox fruit",
     "title": "Turbo Lite Fix Lag",
