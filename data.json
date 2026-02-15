@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771135274430,
+    "game": "Blox Fruit",
+    "title": "Hoho Hub Main (Get Key)",
+    "desc": "Auto Farm [KAITUN]",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771135200025,
     "game": "Blox Fruit",
     "title": "Cokka Hub Main",
