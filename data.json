@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771136620480,
+    "game": "Blox fruit",
+    "title": "HyperIG Auto Pull Level",
+    "desc": "Up Tộc V4",
+    "code": "getgenv().Config = {\nTeam = \"Pirates\", -- uh not work now\nSettings = {\nToolFarm = \"Melee\",\nHopDelay = 2\n}\n}\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/PullLever.luau\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771135448643,
     "game": "Blox Fruit",
     "title": "Vxeze Hub (Get Key)",
