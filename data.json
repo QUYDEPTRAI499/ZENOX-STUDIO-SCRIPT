@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771135448643,
+    "game": "Blox Fruit",
+    "title": "Vxeze Hub (Get Key)",
+    "desc": "Auto Farm [KAITUN]",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Dex-Bear/Vxezehub/refs/heads/main/BF-Main.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771135274430,
     "game": "Blox Fruit",
     "title": "Hoho Hub Main (Get Key)",
