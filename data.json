@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771136740553,
+    "game": "Blox fruit",
+    "title": "Quantum Hub Main ",
+    "desc": "Auto Farm [KAITUN]",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771136701332,
     "game": "Blox fruit",
     "title": "Redz Hub Main",
