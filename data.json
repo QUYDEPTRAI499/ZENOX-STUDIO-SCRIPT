@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771136939760,
+    "game": "Blox fruit",
+    "title": "Speed Hub Main",
+    "desc": "Auto Farm [KAITUN]",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua\", true))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771136892550,
     "game": "Blox fruit",
     "title": "Doraemon Hub Main",
