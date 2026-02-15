@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771137953703,
+    "game": "Blox fruit",
+    "title": "Teddy Hub True Triple Katana",
+    "desc": "Auto Farm [CHEST]",
+    "code": "repeat task.wait() until game:IsLoaded() and game:GetService(\"Players\") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild(\"PlayerGui\")\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TeddyHub-FullyTTK.lua\"))() ",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771137727765,
     "game": "Blox fruit",
     "title": "Teddy Hop Boss",
