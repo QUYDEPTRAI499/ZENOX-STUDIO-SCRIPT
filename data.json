@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771119997115,
+    "game": "Blox Fruit",
+    "title": "OMG Hub",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/20f318386e3fbf069ee3fa797cfc9f34.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771046328977,
     "game": "Blox Fruit",
     "title": "Teddy auto bouty",
