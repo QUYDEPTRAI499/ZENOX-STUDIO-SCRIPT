@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771136798176,
+    "game": "Blox fruit",
+    "title": "Turbo Lite Fix Lag",
+    "desc": "Fix Lag [KAITUN]",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771136740553,
     "game": "Blox fruit",
     "title": "Quantum Hub Main ",
