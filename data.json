@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771135200025,
+    "game": "Blox Fruit",
+    "title": "Cokka Hub Main",
+    "desc": "Auto Farm [KAITUN]",
+    "code": "loadstring(game:HttpGet\"https://raw.githubusercontent.com/UserDevEthical/Loadstring/main/CokkaHub.lua\")()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771135088724,
     "game": "Blox Fruit",
     "title": "Meows Hub Auto Bounty",
