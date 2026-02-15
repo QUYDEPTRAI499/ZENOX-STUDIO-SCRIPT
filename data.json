@@ -1,7 +1,7 @@
 [
   {
     "id": 1771137953703,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Teddy Hub True Triple Katana",
     "desc": "Auto Farm [CHEST]",
     "code": "repeat task.wait() until game:IsLoaded() and game:GetService(\"Players\") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild(\"PlayerGui\")\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TeddyHub-FullyTTK.lua\"))() ",
@@ -10,7 +10,7 @@
   },
   {
     "id": 1771137727765,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Teddy Hop Boss",
     "desc": "Auto Farm",
     "code": "repeat task.wait() until game:IsLoaded() and game:GetService(\"Players\") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild(\"PlayerGui\")\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM\"))() ",
@@ -19,7 +19,7 @@
   },
   {
     "id": 1771137674941,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Teddy Hub Auto V4",
     "desc": "Up Tộc V4",
     "code": "\ngetgenv().TeddyHub = {\n    [\"Allies\"] = {\n        \"Name1\",\"Name2\", \n        \"Name3\"\n    },\n    [\"Method\"] = \"Kill Players After Trial\", -- Kill Players After Trial, Reset Player After Trial\n    [\"MainAccount\"] = \"Name Main\", -- for teleport to server of main account\n    [\"Team\"] = \"Marines\",\n    [\"Gear\"] = \"A-B-B\", -- \"A-A-B\" or \"\"  NOT GEAR 1 and 5\n    [\"ResetAfterTrial\"] = true\n}\nloadstring(game:HttpGet(\"https://github.com/Teddyseetink/Haidepzai/blob/main/TeddyHub-KaitunV4.lua\"))()",
@@ -28,7 +28,7 @@
   },
   {
     "id": 1771137609374,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Teddy Hub Main",
     "desc": "Auto Farm [KAITUN]",
     "code": "repeat task.wait() until game:IsLoaded() and game:GetService(\"Players\") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild(\"PlayerGui\")\nloadstring(game:HttpGet(\"https://api.luarmor.net/files/v4/loaders/e86ed284a22672d29e906214e7bbf8b9.lua\"))() ",
@@ -37,7 +37,7 @@
   },
   {
     "id": 1771136939760,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Speed Hub Main",
     "desc": "Auto Farm [KAITUN]",
     "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua\", true))()",
@@ -46,7 +46,7 @@
   },
   {
     "id": 1771136892550,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Doraemon Hub Main",
     "desc": "Auto Farm [KAITUN]",
     "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua\"))(",
@@ -55,7 +55,7 @@
   },
   {
     "id": 1771136798176,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Turbo Lite Fix Lag",
     "desc": "Fix Lag [KAITUN]",
     "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua\"))()",
@@ -64,7 +64,7 @@
   },
   {
     "id": 1771136740553,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Quantum Hub Main ",
     "desc": "Auto Farm [KAITUN]",
     "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua\"))()",
@@ -73,7 +73,7 @@
   },
   {
     "id": 1771136701332,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "Redz Hub Main",
     "desc": "Auto Farm [KAITUN]",
     "code": "local Settings = {\n    JoinTeam = \"Pirates\"; -- Pirates / Marines\n    Translator = true;   -- true / false\n}\n\nloadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/20f318386e3fbf069ee3fa797cfc9f34.lua\"))()(Settings)",
@@ -82,7 +82,7 @@
   },
   {
     "id": 1771136620480,
-    "game": "Blox fruit",
+    "game": "Blox Fruit",
     "title": "HyperIG Auto Pull Level",
     "desc": "Up Tộc V4",
     "code": "getgenv().Config = {\nTeam = \"Pirates\", -- uh not work now\nSettings = {\nToolFarm = \"Melee\",\nHopDelay = 2\n}\n}\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/PullLever.luau\"))()",
