@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771137674941,
+    "game": "Blox fruit",
+    "title": "Teddy Hub Auto V4",
+    "desc": "Up Tộc V4",
+    "code": "\ngetgenv().TeddyHub = {\n    [\"Allies\"] = {\n        \"Name1\",\"Name2\", \n        \"Name3\"\n    },\n    [\"Method\"] = \"Kill Players After Trial\", -- Kill Players After Trial, Reset Player After Trial\n    [\"MainAccount\"] = \"Name Main\", -- for teleport to server of main account\n    [\"Team\"] = \"Marines\",\n    [\"Gear\"] = \"A-B-B\", -- \"A-A-B\" or \"\"  NOT GEAR 1 and 5\n    [\"ResetAfterTrial\"] = true\n}\nloadstring(game:HttpGet(\"https://github.com/Teddyseetink/Haidepzai/blob/main/TeddyHub-KaitunV4.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771137609374,
     "game": "Blox fruit",
     "title": "Teddy Hub Main",
