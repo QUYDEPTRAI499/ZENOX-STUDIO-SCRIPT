@@ -1,5 +1,14 @@
 [
   {
+    "id": 1771307798487,
+    "game": "Blox Fruit",
+    "title": "Gravity Hub Main",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua\"))()\n    ",
+    "tag": "HOT",
+    "tagClass": "hot"
+  },
+  {
     "id": 1771137953703,
     "game": "Blox Fruit",
     "title": "Teddy Hub True Triple Katana",
