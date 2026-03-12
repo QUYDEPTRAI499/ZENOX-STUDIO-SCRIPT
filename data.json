@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773314868786,
+    "game": "Blox Fruit",
+    "title": "Trẩu New V1",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/trungdao2k4/trauroblox/refs/heads/main/traubluev1\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773314850538,
     "game": "Blox Fruit",
     "title": "MidNight x Hub",
