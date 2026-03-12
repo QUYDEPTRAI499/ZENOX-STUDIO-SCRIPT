@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773316244014,
+    "game": "Blox Fruit",
+    "title": "3 TOC Hub ",
+    "desc": "Auto Farm",
+    "code": "getgenv().Team = \"Marines\" --// Pirates loadstring(game:HttpGet(\"https://api.luarmor.net/files/v4/loaders/245375592509cc0bcb3526982431ab18.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773316166952,
     "game": "Blox Fruit",
     "title": "Bã Mía Hub",
