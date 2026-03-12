@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773315356579,
+    "game": "Blox Fruit",
+    "title": "Trẩu v10",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/trungdao2k4/buffalo/refs/heads/main/trauhubv10\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773315031156,
     "game": "Blox Fruit",
     "title": "Auto Lấy Ghoul",
