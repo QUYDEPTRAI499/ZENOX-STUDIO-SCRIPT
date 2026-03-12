@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773314919772,
+    "game": "Blox Fruit",
+    "title": "PMT Hub",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/trieu1082/Trieu/main/trieucanallthkngu\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773314908081,
     "game": "Blox Fruit",
     "title": "Bacon Hub",
