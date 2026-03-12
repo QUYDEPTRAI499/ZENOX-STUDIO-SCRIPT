@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773316166952,
+    "game": "Blox Fruit",
+    "title": "Bã Mía Hub",
+    "desc": "Auto Farm",
+    "code": "repeat task.wait() until game:IsLoaded() loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Graihub/Loader-bamiahub/refs/heads/main/bamia\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773315813533,
     "game": "Blox Fruit",
     "title": "Rubu V5",
