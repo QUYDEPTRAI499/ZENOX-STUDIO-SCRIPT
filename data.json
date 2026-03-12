@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773314893100,
+    "game": "Blox Fruit",
+    "title": "Ok Hub",
+    "desc": "Auto Farm",
+    "code": "getgenv().team = \"Pirates\" -- Marines\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/fakekuri/Okhubhere/refs/heads/main/MainBloxFruit.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773314868786,
     "game": "Blox Fruit",
     "title": "Trẩu New V1",
