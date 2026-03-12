@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773315453700,
+    "game": "Blox Fruit",
+    "title": "Tày Hub (nà ná nan na anh độ phixi)",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/VTDROBLOX/Animehub/refs/heads/main/Tayhub.txt\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773315356579,
     "game": "Blox Fruit",
     "title": "Trẩu v10",
