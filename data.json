@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773314908081,
+    "game": "Blox Fruit",
+    "title": "Bacon Hub",
+    "desc": "Auto Farm",
+    "code": "repeat wait() until game:IsLoaded() and game.Players.LocalPlayer \ngetgenv().team = \"Marines\" -- Pirates or Marines\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/vinh129150/hack/refs/heads/main/Bloxfruits.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773314893100,
     "game": "Blox Fruit",
     "title": "Ok Hub",
