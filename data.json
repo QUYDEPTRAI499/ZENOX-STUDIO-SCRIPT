@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773315813533,
+    "game": "Blox Fruit",
+    "title": "Rubu V5",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Bubu2k/Rubutv/refs/heads/main/rubuhubv5.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773315688084,
     "game": "Blox Fruit",
     "title": "Rubu V6",
