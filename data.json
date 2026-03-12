@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773314850538,
+    "game": "Blox Fruit",
+    "title": "MidNight x Hub",
+    "desc": "Auto Farm",
+    "code": "repeat wait() until game:IsLoaded() and game.Players.LocalPlayer\ngetgenv().Team = \"Pirates\"\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Ohofo2279/Midnight/refs/heads/main/MidnightX-BloxFruits.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773314817705,
     "game": "Blox Fruit",
     "title": "Zinner Hub",
