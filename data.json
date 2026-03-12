@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773315501604,
+    "game": "Blox Fruit",
+    "title": "Min V5",
+    "desc": "Auto Farm",
+    "code": "getgenv().Team = \"Marines\" loadstring(game:HttpGet(\"https://github.com/LuaCrack/Min/raw/refs/heads/main/MinVnV5\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773315478397,
     "game": "Blox Fruit",
     "title": "Trẩu V9",
