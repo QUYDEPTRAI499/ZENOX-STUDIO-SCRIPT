@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773315478397,
+    "game": "Blox Fruit",
+    "title": "Trẩu V9",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/trungdao2k4/buffalo/refs/heads/main/traurobloxv9.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773315453700,
     "game": "Blox Fruit",
     "title": "Tày Hub (nà ná nan na anh độ phixi)",
