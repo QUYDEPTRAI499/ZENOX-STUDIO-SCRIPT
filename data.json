@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773315031156,
+    "game": "Blox Fruit",
+    "title": "Auto Lấy Ghoul",
+    "desc": "Up Tộc V4",
+    "code": "getgenv().Team = \"Marines\"\ngetgenv().Get_Race = \"Ghoul\"\nloadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/7a6c326e81861b3e1e7207c5d11ed755.lua\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1773314994179,
     "game": "Blox Fruit",
     "title": "Auto Lấy Cyborg",
