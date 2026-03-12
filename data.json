@@ -1,5 +1,14 @@
 [
   {
+    "id": 1773314817705,
+    "game": "Blox Fruit",
+    "title": "Zinner Hub",
+    "desc": "Auto Farm",
+    "code": "loadstring(game:HttpGet(\"https://github.com/HoangNguyenk8/Roblox/blob/main/BF-Main.luau?raw=true\"))()",
+    "tag": "NEW",
+    "tagClass": "new"
+  },
+  {
     "id": 1771307798487,
     "game": "Blox Fruit",
     "title": "Gravity Hub Main",
